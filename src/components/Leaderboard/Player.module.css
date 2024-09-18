@@ -1,0 +1,10 @@
+.player{
+    display: flex;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    width: 85vw;
+    justify-content: space-around;
+    background-color: rgb(196, 191, 191);
+    margin:3px;
+    border-radius: 5px;
+}

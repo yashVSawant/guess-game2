@@ -1,0 +1,19 @@
+.profile{
+    border:solid 0px;
+    padding:30px;
+    margin:10px;
+    background-color: rgb(222, 198, 245);
+    border-radius: 15px;
+    width: 30vw;
+    height: 70vh;
+}
+
+.name{
+    margin: 40px;
+}
+
+.stats{
+    font-size: larger;
+    font-weight: bolder;
+    margin-block: 10px;
+}

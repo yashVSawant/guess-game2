@@ -1,0 +1,18 @@
+.outer{
+    border: 2px solid black ;
+    border-radius: 3px;
+    width:50vw;
+    height: 10px;
+    margin: 10px;
+}
+
+.inner{
+    background-color: blue;
+    height:10px;
+}
+
+.scoreBar{
+    display: flex;
+    font-size: larger;
+    margin-top: 40px;
+}

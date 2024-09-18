@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(246, 255, 125);
+    height: 15vh;
+    width: 99.1vw;
+    border-radius: 20px;
+    margin-top: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+.header nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20vw;
+}
+
+.header nav li{
+    margin: 5px;
+    list-style-type: none;
+}
+
+.links {
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}

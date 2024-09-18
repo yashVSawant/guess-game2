@@ -1,0 +1,10 @@
+.full{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main{
+    background-color: rgb(208, 228, 247);
+}

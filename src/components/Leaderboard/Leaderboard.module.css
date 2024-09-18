@@ -1,0 +1,14 @@
+.leaderboardBtn{
+    display: flex;
+    width: 45vw;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+.btn{
+    height: 40px;
+    background-color: rgb(245, 219, 69);
+    border: solid 0px ;
+    border-radius: 10px;
+    padding-inline: 6px;
+}

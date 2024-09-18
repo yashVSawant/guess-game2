@@ -1,0 +1,42 @@
+.guess{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    align-items: center;
+    font-size: large;
+    font-weight: bolder;
+    color: rgb(57, 56, 63);
+}
+
+.stats{
+    color: rgb(44, 37, 43);
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+}
+
+.guessInput{
+    width: 20vw;
+    height: 30px;
+    border-radius: 8px;
+    font-size: larger;
+    text-align: center;
+}
+
+.btnDiv{
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+    margin: 15px;
+}
+
+.btn{
+    height: 60px;
+    width: 90px;
+    background-color: rgb(245, 198, 69);
+    border: solid 0px ;
+    border-radius: 13px;
+    padding-inline: 6px;
+    font-size: large;
+    font-weight: bolder;
+}
