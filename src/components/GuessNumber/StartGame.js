@@ -19,8 +19,12 @@ const StartGame = ()=>{
     useEffect(()=>{
         const apiCall = async()=>{
             try {
-                const userData = await api.get('/api/user/info');
-                const scoresData = await api.get('/api/user/score');
+                const userDataApi = api.get('/api/user/info');
+                const scoresDataApi = api.get('/api/user/score');
+                const [userData, scoresData] = await Promise.all([
+                    userDataApi,
+                    scoresDataApi
+                ]);
                 const scores = scoresData.data.pastScore;
                 setPastScores([...scores])
                 const info = userData.data.data;

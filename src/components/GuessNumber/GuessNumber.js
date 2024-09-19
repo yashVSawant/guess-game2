@@ -25,6 +25,7 @@ const GuessNumber = ()=> {
   const [correctGuess ,setCorrectGuess] =useState(0);
   const [totalAttempts, setTotalAttempts] = useState(startingAttempts);
   const [score, setScore] = useState(0);
+  const [target ,setTarget] = useState(0);
   const [end, setEnd] = useState(false);
   const [error ,setError] = useState(false);
 
@@ -34,10 +35,9 @@ const GuessNumber = ()=> {
       const game = gameData.data.game;
       const status = gameData.data.guess;
       const hint = gameData.data.hint;
-      
       if(game.isGameOver){
-        setEnd(true);
-      }
+        endMatch()
+      }else{
         setAttempts(game.attemptsMade);
         setTotalAttempts(game.maxAttempts);
         setFeedback(status);
@@ -45,6 +45,7 @@ const GuessNumber = ()=> {
         setCorrectGuess(game.correctGuesses);
         setGuess('');
         setHint(hint);
+      }
       
     } catch (err) {
       console.log(err)
@@ -57,8 +58,15 @@ const GuessNumber = ()=> {
 
   const endMatch = async()=>{
     try {
-      await api.put(`api/game/end/${gameId}`)
+      const endData = await api.put(`api/game/end/${gameId}`);
+      const game = endData.data.game;
       setEnd(true);
+      setAttempts(game.attemptsMade);
+      setTotalAttempts(game.maxAttempts);
+      setScore(game.score);
+      setCorrectGuess(game.correctGuesses);
+      setTarget(game.latestTarget)
+      setGuess('');
     } catch (err) {
       console.log(err)
     }
@@ -69,6 +77,7 @@ const GuessNumber = ()=> {
       const  postGame = await api.post('/api/game');
       const game = postGame.data.game;
       setGameId(game._id);
+      setTarget(game.latestTarget)
       setFeedback('');
       setAttempts(0);
       setTotalAttempts(game.maxAttempts);
@@ -97,6 +106,7 @@ const GuessNumber = ()=> {
             status={attempts === totalAttempts ? 'attempts over!':'you quit!'} 
             attempts={attempts} 
             score={score} 
+            target={target}
             correctGuess={correctGuess}
             onRestart={restartHandler}/>}
         <Score score={score} highest={highestScore} />

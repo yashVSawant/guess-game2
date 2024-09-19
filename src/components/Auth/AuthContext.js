@@ -7,13 +7,13 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const isToken = localStorage.getItem('guessGameToken')?true:false;
-  const [ token , setToken] = useState(localStorage.getItem('guessGameToken') || '')
+  const isToken = localStorage.getItem('GameToken')?true:false;
+  const [ token , setToken] = useState(localStorage.getItem('GameToken') || '')
   const [isAuthenticated, setIsAuthenticated] = useState(isToken);
 
   const login = (getToken) => {
     const bearerToken = `Bearer ${getToken}`
-    localStorage.setItem('guessGameToken',bearerToken)
+    localStorage.setItem('GameToken',bearerToken)
     setToken(bearerToken);
     setIsAuthenticated(true);
   };

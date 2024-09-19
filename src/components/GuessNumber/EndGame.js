@@ -22,6 +22,7 @@ const EndGame = (props)=>{
                     <h3>Score : {props.score}</h3>
                     <h3>attempts : {props.attempts}</h3>
                     <h3>correct guesses : {props.correctGuess}</h3>
+                    <h3>Target was : {props.target}</h3>
                 </div>
                 <div>
                     <button onClick={restartMatchHandler} className={classes.btn}>Restart</button>
